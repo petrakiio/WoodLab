@@ -1,0 +1,235 @@
+/* ESTILOS BASE E CABEÇALHO (Os estilos que você gostou) */
+body {
+    background-color: burlywood;
+    margin: 0;
+    font-family: Arial, sans-serif; 
+}
+
+header {
+    background-color: #333; 
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: space-between; /* Distribui espaço entre a logo, busca e lista */
+    align-items: center; 
+}
+
+#logo {
+    font-size: 30px;
+    color: white; 
+    cursor: pointer;
+    margin: 0; 
+}
+
+#logo:hover {
+    transition: 0.5s; 
+    transform: scale(1.05); 
+    color: orange; 
+    font-size: 30px;
+}
+#destaque{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s ease-in-out; 
+}
+
+#destaque:hover{
+    transform: scale(1.2);
+    color: orange;
+}
+header ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 20px; 
+}
+
+header li a {
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+header li a:hover {
+    color: orange; 
+}
+
+/* ESTILOS NOVOS: BARRA DE PESQUISA */
+.search-bar {
+    display: flex;
+    gap: 5px;
+    margin: 0 40px; /* Adiciona espaço entre a logo/links */
+    flex-grow: 1; /* Permite que a barra de pesquisa ocupe o espaço restante */
+    max-width: 400px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #ff8c00;
+}
+
+
+/* ... SEU CÓDIGO CSS ANTERIOR AQUI ... */
+
+/* Estilo para as Imagens nos Cards */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Layout de Grid para os Cards (Alterado para o novo ID) */
+#products-grid {
+    display: grid;
+    /* 3 colunas, mínimo de 300px, adaptável */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    /* Manter estilos anteriores do card */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card button {
+    /* Ajusta o botão para o novo nome de classe no JS */
+    background-color: #5c3f3f; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+/* ESTILOS NOVOS: MODAL */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 10; /* Fica acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fundo escuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Layout de Conteúdo no Modal */
+.modal-content-grid {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.modal-image {
+    width: 50%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-text-content {
+    width: 50%;
+    text-align: left;
+}
+
+.modal-text-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal-price {
+    display: block;
+    font-size: 2em;
+    color: green;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.add-to-cart-modal-btn {
+    background-color: #5c3f3f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+    width: 100%; /* Botão no modal ocupa a largura total */
+}
+
+.add-to-cart-modal-btn:hover {
+    background-color: #4a3232;
+}
+
+/* Media Query para Responsividade no Modal (em telas pequenas) */
+@media (max-width: 768px) {
+    .modal-content-grid {
+        flex-direction: column;
+    }
+    .modal-image, .modal-text-content {
+        width: 100%;
+    }
+}

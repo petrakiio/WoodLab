@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WoodLabStore</title>
+<link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+<header>
+    <h1 id="logo">WoodLabStore</h1>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Pesquisar Móveis...">
+        <button id="searchButton">🔍</button>
+    </div>
+
+    <ul id="menu">
+        <li><a href="/index.html">Início</a></li>
+        <li><a href="/HTML/promo.html">Promoções</a></li>
+    </ul>
+</header>
+
+<main class="products-container">
+    <h2 id="destaque">Móveis de Madeira em Destaque</h2>
+    <div id="products-grid"></div>
+</main>
+<div id="product-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script src="/JavaScript/index.js" defer></script>
+</body>
+</html>
