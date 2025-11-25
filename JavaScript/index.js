@@ -48,7 +48,7 @@ const products = [
         name: "Poltrona Externa 'Oásis'",
         description: "Madeira Teca de alta densidade, naturalmente resistente à água, pragas e intempéries. Almofadas removíveis com tecido impermeável. Conforto e elegância para varandas, jardins e áreas de lazer.",
         price: 1599.99,
-        imgUrl: "/Imagens/poltrona.webp"
+        imgUrl: "Imagens/poltrona.webp"
     },
     {
         id: 6,
