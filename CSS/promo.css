@@ -1,18 +1,17 @@
-/* =================================
-   ESTILOS BASE E CABEÇALHO (O seu código)
-   ================================= */
 body {
     background-color: burlywood;
     margin: 0;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
 }
 
 header {
     background-color: #333; 
-    padding: 10px 20px; 
+    padding: 15px 20px; 
     display: flex; 
+    flex-wrap: wrap;
     justify-content: space-between; 
     align-items: center; 
+    gap: 15px;
 }
 
 #logo {
@@ -20,13 +19,26 @@ header {
     color: white; 
     cursor: pointer;
     margin: 0; 
+    transition: all 0.5s ease;
 }
 
 #logo:hover {
-    transition: 0.5s; 
     transform: scale(1.05); 
     color: orange; 
+}
+
+#destaque {
     font-size: 30px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s ease-in-out; 
+    margin: 40px 0;
+}
+
+#destaque:hover {
+    transform: scale(1.1);
+    color: orange;
 }
 
 header ul {
@@ -49,13 +61,12 @@ header li a:hover {
     color: orange; 
 }
 
-/* ESTILOS NOVOS: BARRA DE PESQUISA */
 .search-bar {
     display: flex;
     gap: 5px;
-    margin: 0 40px; 
     flex-grow: 1; 
     max-width: 400px;
+    order: 2;
 }
 
 .search-bar input[type="text"] {
@@ -64,6 +75,7 @@ header li a:hover {
     border-radius: 5px;
     font-size: 16px;
     flex-grow: 1;
+    width: 100%;
 }
 
 .search-bar button {
@@ -80,273 +92,21 @@ header li a:hover {
     background-color: #ff8c00;
 }
 
----
-
-/* =================================
-   ESTILOS DE CARDS DE PRODUTOS (index.html, promocoes.html)
-   ================================= */
-.products-container {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.products-container h2 {
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 2em;
-}
-
-#products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.product-card {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.product-image {
-    width: 100%;
-    height: 200px; /* Crucial para a imagem aparecer na carga inicial */
-    object-fit: cover; 
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.product-card h3 {
-    color: #4a4a4a;
-    margin-top: 0;
-}
-
-.product-card .price {
-    display: block;
-    font-size: 1.5em;
-    color: green;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.product-card button {
-    background-color: #5c3f3f; 
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-
-.product-card button:hover {
-    background-color: #4a3232;
-}
-
-.no-results {
-    font-size: 1.5em;
-    color: #555;
-    margin-top: 50px;
-    grid-column: 1 / -1;
-}
-
----
-
-/* =================================
-   ESTILOS DE MODAL
-   ================================= */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 10; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4); 
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
-.modal-content-grid {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-}
-
-.modal-image {
-    width: 50%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.modal-text-content {
-    width: 50%;
-    text-align: left;
-}
-
-.modal-price {
-    display: block;
-    font-size: 2em;
-    color: green;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.add-to-cart-modal-btn {
-    background-color: #5c3f3f;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
-    width: 100%; 
-}
-
-.add-to-cart-modal-btn:hover {
-    background-color: #4a3232;
-}
-
----
-
-/* =================================
-   ESTILOS DA PÁGINA DE LOGIN (login.html)
-   ================================= */
-
-.login-container {
-    padding: 40px 20px;
-    text-align: center;
-    max-width: 450px; 
-    margin: 50px auto; 
-}
-
-.login-container h2 {
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 2em;
-}
-
-.login-form-box {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    text-align: left;
-}
-
-/* Classes reutilizadas do formulário */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #4a4a4a;
-}
-
-.form-group input[type="email"],
-.form-group input[type="password"],
-.form-group input[type="text"],
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-.submit-login-btn {
-    background-color: #5c3f3f; 
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.submit-login-btn:hover {
-    background-color: #4a3232;
-}
-
-.signup-link {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.95em;
-}
-
-.signup-link a {
-    color: orange;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.signup-link a:hover {
-    text-decoration: underline;
-}
-
-/* =================================
-   ESTILOS DA PÁGINA DE PROMOÇÕES (promocoes.html)
-   ================================= */
 .promotions-container {
     padding: 40px 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .promotions-container h2 {
-    color: #b33939; 
+    color: #b33939;
     margin-bottom: 40px;
     font-size: 2.5em;
     border-bottom: 2px solid #b33939;
     padding-bottom: 10px;
 }
+
+
 
 .promotion-highlight {
     margin-bottom: 50px;
@@ -355,39 +115,134 @@ header li a:hover {
     border-radius: 10px;
     border: 1px dashed #b33939;
 }
-
-#promotions-grid {
+#products-grid, #promotions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.promotion-card .old-price {
-    color: #888;
-    text-decoration: line-through; 
-    font-size: 1em;
-    margin-bottom: 5px;
+.product-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
-.promotion-card .sale-price {
-    display: block;
-    font-size: 2em;
-    color: #b33939; 
-    font-weight: bold;
-    margin: 0 0 15px 0;
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-.exclusive-banner {
-    background-color: #333;
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card button, .submit-login-btn, .add-to-cart-modal-btn {
+    background-color: #5c3f3f;
     color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.product-card button:hover, .submit-login-btn:hover, .add-to-cart-modal-btn:hover {
+    background-color: #4a3232;
+}
+.rodapé{
+    color: white;
+    background-color: #333;
+    padding: 20px 0;
+}
+.rodapé h3{
+    color: #b33939;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.rodapé p{
+    color: white;
+    padding:0;
+    font-size: 20px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fefefe;
     padding: 30px;
     border-radius: 10px;
-    margin-top: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    position: relative;
 }
 
-.exclusive-banner h3 {
-    color: orange;
-    margin: 0 0 10px 0;
+.modal-content-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-image {
+    width: 50%;
+    border-radius: 8px;
+}
+
+.modal-text-content {
+    width: 50%;
+}
+.old-price {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.sale-price, .modal-price, .price {
+    color: #b33939;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    
+    .search-bar {
+        max-width: 100%;
+        order: 3;
+    }
+    
+    .modal-content-grid {
+        flex-direction: column;
+    }
+    
+    .modal-image, .modal-text-content {
+        width: 100%;
+    }
 }

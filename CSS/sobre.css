@@ -1,0 +1,181 @@
+body {
+    background-color: burlywood;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center; 
+}
+
+header {
+    background-color: #333; 
+    padding: 15px 20px; 
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 15px;
+}
+
+#logo {
+    font-size: 30px;
+    color: white; 
+    cursor: pointer;
+    margin: 0; 
+    transition: all 0.5s ease;
+}
+
+#logo:hover {
+    transform: scale(1.05); 
+    color: orange; 
+}
+
+#destaque {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s ease-in-out; 
+    margin: 40px 0;
+}
+
+#destaque:hover {
+    transform: scale(1.1);
+    color: orange;
+}
+
+header ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 20px; 
+}
+
+header li a {
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+header li a:hover {
+    color: orange; 
+}
+
+.search-bar {
+    display: flex;
+    gap: 5px;
+    flex-grow: 1; 
+    max-width: 400px;
+    order: 2;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #ff8c00;
+}
+
+
+h1, h2, h3, h4 {
+    color: #333;
+    margin-top: 30px;
+}
+
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+
+.tec {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.tec img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s;
+}
+
+.tec img:hover {
+    transform: scale(1.2);
+}
+
+
+img[alt="python"] {
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+
+#button {
+    display: inline-block;
+    background-color: #5c3f3f; 
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#button:hover {
+    background-color: orange; 
+    transform: translateY(-3px);
+}
+.servicos {
+    background-color: rgba(255, 255, 255, 0.3); 
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 15px;
+}
+
+.aviso-tecnico {
+    background-color: #fff3cd;
+    border-left: 5px solid #856404; 
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #856404;
+    text-align: left;
+    display: inline-block;
+}
+
+/* Responsividade básica para o Header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+    .tec {
+        flex-wrap: wrap;
+    }
+}
