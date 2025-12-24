@@ -1,0 +1,233 @@
+body {
+    background-color: burlywood;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333; 
+    padding: 15px 20px; 
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 15px;
+}
+
+#logo {
+    font-size: 30px;
+    color: white; 
+    cursor: pointer;
+    margin: 0; 
+    transition: all 0.5s ease;
+}
+
+#logo:hover {
+    transform: scale(1.05); 
+    color: orange; 
+}
+
+#destaque {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s ease-in-out; 
+    margin: 40px 0;
+}
+
+#destaque:hover {
+    transform: scale(1.1);
+    color: orange;
+}
+
+header ul {
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    gap: 20px; 
+}
+
+header li a {
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+header li a:hover {
+    color: orange; 
+}
+
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container > h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.container > h1::after {
+    content: "";
+    background: linear-gradient(90deg, orange, #3e2a2a, orange);
+    width: 100%;        
+    height: 4px;        
+    border-radius: 5px;
+    position: absolute; 
+    bottom: -5px;       
+    left: 0;   
+    display: block;
+    transform: scaleX(0); 
+    transition: transform 0.4s ease-in-out;
+    transform-origin: left; 
+}
+
+.container > h1:hover::after {
+    transform: scaleX(1); 
+}
+
+
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+    display: flex; 
+    flex-direction: column;
+}
+
+
+form img {
+    width: 100px;
+    margin: 0 auto 20px auto; 
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 2s
+}
+form img:hover{
+    transform: scale(1.1);
+    
+}
+
+
+form p {
+    margin: 10px 0 5px 0;
+    color: #5c3f3f;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: none; 
+    border-bottom: 2px solid #5c3f3f; 
+    background-color: transparent; 
+    border-radius: 0; 
+    font-size: 16px;
+    outline: none; 
+    transition: border-bottom-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-bottom: 2px solid orange;
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 14px;
+}
+
+button {
+    background-color: #5c3f3f; 
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3e2a2a;
+}
+button {
+    position: relative;
+    overflow: hidden; 
+    z-index: 1;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+button:hover::before {
+    left: 100%;
+}
+form a {
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+form a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+form a::after {
+    content: "Não tem uma conta? Cadastre-se";
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.rodapé{
+    color: white;
+    background-color: #333;
+     padding: 20px 0;
+}
+
+.rodapé p{
+    color: white;
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
